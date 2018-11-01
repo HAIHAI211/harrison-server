@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class FootballApplication extends SpringBootServletInitializer {
+public class Application extends SpringBootServletInitializer {
 
 //	@Override
 //	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
@@ -13,6 +13,6 @@ public class FootballApplication extends SpringBootServletInitializer {
 //	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(FootballApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }
