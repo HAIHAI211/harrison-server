@@ -1,6 +1,7 @@
 package com.rich.harrison.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
@@ -8,8 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@DynamicInsert
 @DynamicUpdate
-//@JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
 public class IndexPage {
     @Id
     @GeneratedValue

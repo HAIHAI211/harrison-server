@@ -3,9 +3,7 @@ package com.rich.harrison.controller;
 import com.rich.harrison.dao.IndexRepository;
 import com.rich.harrison.entity.IndexPage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -38,10 +36,15 @@ public class IndexController {
     /*
     * 查询首页信息
     * */
-    @GetMapping(value="/getInfo")
-    private IndexPage getInfo(){
+    @GetMapping(value="/get")
+    private IndexPage getIndex(){
         Optional<IndexPage> indexPageOptional= rep.findById(0);
         return indexPageOptional.isPresent() ? indexPageOptional.get(): null;
+    }
+    @PostMapping(value = "/update")
+    private void updateIndex (@RequestBody IndexPage indexPage) {
+        indexPage.setId(0);
+        rep.save(indexPage);
     }
 
 }
